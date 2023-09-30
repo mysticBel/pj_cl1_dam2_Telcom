@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblCostoTotal: UILabel!
     @IBOutlet weak var imgServicio: UIImageView!
     
+    @IBOutlet weak var lblMensaje: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,14 @@ class ViewController: UIViewController {
         var costo_dsct:Double
         var costo_total:Double
         var foto:String = " "
-        
+       
+        tf_Cliente = lblCliente.text ?? " "
+        tf_Dni = lblDni.text ?? " "
         tf_opcServicio = Int(lblServicio.text ?? "0") ?? 0
        
+        var datosPers:Bool = false
+        if(tf_Cliente != " " && tf_Cliente.count > 2 && tf_Dni != " " && tf_Dni.count == 8  ) { datosPers = true}
+    
         
         switch(tf_opcServicio){
         case 1:
@@ -74,18 +80,25 @@ class ViewController: UIViewController {
         default:
             foto="default"
         }
-        if (tf_opcServicio >= 1 && tf_opcServicio <= 5 ){
-            costo_dsct=(costo_serv + costo_inst)*porcentaje_dsct
-            costo_total=(costo_serv + costo_inst)-costo_dsct
-            lblCostoServicio.text = String(costo_serv)
-            lblCostoInstalacion.text = String(costo_inst)
-            lblCostoDescuento.text = String(porcentaje_dsct)
-            lblCostoTotal.text = String(costo_total)
+        if ( datosPers ){
+            if(tf_opcServicio >= 1 && tf_opcServicio <= 5){
+                costo_dsct=(costo_serv + costo_inst)*porcentaje_dsct
+                costo_total=(costo_serv + costo_inst)-costo_dsct
+                lblCostoServicio.text = String(costo_serv)
+                lblCostoInstalacion.text = String(costo_inst)
+                lblCostoDescuento.text = String(porcentaje_dsct)
+                lblCostoTotal.text = String(costo_total)
+                lblMensaje.text = " "
+            } else{
+                lblMensaje.text = "Ingrese una opcion de servicio"
+            }
+            
         }else{
             lblCostoServicio.text = "0.00"
             lblCostoInstalacion.text = "0.00"
             lblCostoDescuento.text = "0.00"
             lblCostoTotal.text = "-"
+            lblMensaje.text="Colocar sus datos personales!"
         }
         imgServicio.image = UIImage(named: foto)
     }

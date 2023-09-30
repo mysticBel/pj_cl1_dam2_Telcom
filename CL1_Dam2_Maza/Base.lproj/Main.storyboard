@@ -192,6 +192,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWT-7w-CUV">
+                                <rect key="frame" x="28" y="783" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,6 +211,7 @@
                         <outlet property="lblCostoServicio" destination="fRy-DS-pox" id="gs2-r5-swA"/>
                         <outlet property="lblCostoTotal" destination="5vL-ej-ili" id="zUp-OT-4uU"/>
                         <outlet property="lblDni" destination="zke-ep-1A0" id="jMR-Jq-H0s"/>
+                        <outlet property="lblMensaje" destination="oWT-7w-CUV" id="VG0-En-eVm"/>
                         <outlet property="lblServicio" destination="63J-e2-eo1" id="5hj-jZ-rWA"/>
                     </connections>
                 </viewController>
@@ -218,6 +226,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
