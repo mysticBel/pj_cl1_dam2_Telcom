@@ -80,26 +80,26 @@ class ViewController: UIViewController {
         default:
             foto="default"
         }
-        if ( datosPers ){
-            if(tf_opcServicio >= 1 && tf_opcServicio <= 5){
-                costo_dsct=(costo_serv + costo_inst)*porcentaje_dsct
-                costo_total=(costo_serv + costo_inst)-costo_dsct
-                lblCostoServicio.text = String(costo_serv)
-                lblCostoInstalacion.text = String(costo_inst)
-                lblCostoDescuento.text = String(porcentaje_dsct)
-                lblCostoTotal.text = String(costo_total)
-                lblMensaje.text = " "
-            } else{
-                lblMensaje.text = "Ingrese una opcion de servicio"
-            }
-            
-        }else{
+
+        if(datosPers == false){
             lblCostoServicio.text = "0.00"
             lblCostoInstalacion.text = "0.00"
             lblCostoDescuento.text = "0.00"
             lblCostoTotal.text = "-"
             lblMensaje.text="Colocar sus datos personales!"
+          return
         }
+        if(tf_opcServicio < 1 || tf_opcServicio > 5){
+            lblMensaje.text = "Ingrese una opcion de servicio"
+            return
+        }
+        costo_dsct=(costo_serv + costo_inst)*porcentaje_dsct
+        costo_total=(costo_serv + costo_inst)-costo_dsct
+        lblCostoServicio.text = String(costo_serv)
+        lblCostoInstalacion.text = String(costo_inst)
+        lblCostoDescuento.text = String(porcentaje_dsct)
+        lblCostoTotal.text = String(costo_total)
+        lblMensaje.text = " "
         imgServicio.image = UIImage(named: foto)
     }
 }
