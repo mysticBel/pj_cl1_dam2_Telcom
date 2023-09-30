@@ -71,7 +71,7 @@ class ViewController: UIViewController {
             costo_inst=15.00
             porcentaje_dsct=0.01
             foto="cable"
-        default:           
+        default:
             foto="default"
         }
         if (tf_opcServicio >= 1 && tf_opcServicio <= 5 ){
@@ -82,9 +82,9 @@ class ViewController: UIViewController {
             lblCostoDescuento.text = String(porcentaje_dsct)
             lblCostoTotal.text = String(costo_total)
         }else{
-            lblCostoServicio.text = "-"
-            lblCostoInstalacion.text = "-"
-            lblCostoDescuento.text = "-"
+            lblCostoServicio.text = "0.00"
+            lblCostoInstalacion.text = "0.00"
+            lblCostoDescuento.text = "0.00"
             lblCostoTotal.text = "-"
         }
         imgServicio.image = UIImage(named: foto)
