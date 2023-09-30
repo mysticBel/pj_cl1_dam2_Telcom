@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgServicio.image = UIImage(named: "default")
         // Do any additional setup after loading the view.
     }
     
@@ -70,11 +71,7 @@ class ViewController: UIViewController {
             costo_inst=15.00
             porcentaje_dsct=0.01
             foto="cable"
-        default:
-            lblCostoServicio.text = "-"
-            lblCostoInstalacion.text = "-"
-            lblCostoDescuento.text = "-"
-            lblCostoTotal.text = "-"
+        default:           
             foto="default"
         }
         if (tf_opcServicio >= 1 && tf_opcServicio <= 5 ){
@@ -84,6 +81,11 @@ class ViewController: UIViewController {
             lblCostoInstalacion.text = String(costo_inst)
             lblCostoDescuento.text = String(porcentaje_dsct)
             lblCostoTotal.text = String(costo_total)
+        }else{
+            lblCostoServicio.text = "-"
+            lblCostoInstalacion.text = "-"
+            lblCostoDescuento.text = "-"
+            lblCostoTotal.text = "-"
         }
         imgServicio.image = UIImage(named: foto)
     }
