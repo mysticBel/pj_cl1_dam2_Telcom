@@ -157,6 +157,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnCalcular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N0L-CR-uNT"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-k8-7E2">
                                 <rect key="frame" x="106" y="679" width="180" height="87"/>
@@ -193,6 +196,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="imgServicio" destination="Xfx-k8-7E2" id="RyK-hf-Sri"/>
+                        <outlet property="lblCliente" destination="x5V-DA-15r" id="fdV-Md-wTc"/>
+                        <outlet property="lblCostoDescuento" destination="5Ux-qV-pNd" id="uiX-FY-ahV"/>
+                        <outlet property="lblCostoInstalacion" destination="RQx-0y-yan" id="ThN-73-8W3"/>
+                        <outlet property="lblCostoServicio" destination="fRy-DS-pox" id="gs2-r5-swA"/>
+                        <outlet property="lblCostoTotal" destination="8bC-Xf-vdC" id="cah-ZD-Y11"/>
+                        <outlet property="lblDni" destination="zke-ep-1A0" id="jMR-Jq-H0s"/>
+                        <outlet property="lblServicio" destination="63J-e2-eo1" id="5hj-jZ-rWA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
