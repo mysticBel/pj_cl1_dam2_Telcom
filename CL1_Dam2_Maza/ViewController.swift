@@ -34,43 +34,58 @@ class ViewController: UIViewController {
         var tf_opcServicio:Int
         
         //opc
-        var costo_serv:Double
-        var costo_inst:Double
-        var porcentaje_dsct:Double
+        var costo_serv:Double = 0.00
+        var costo_inst:Double = 0.00
+        var porcentaje_dsct:Double = 0.00
         var costo_dsct:Double
         var costo_total:Double
+        var foto:String = " "
         
         tf_opcServicio = Int(lblServicio.text ?? "0") ?? 0
+       
         
         switch(tf_opcServicio){
         case 1:
             costo_serv=109.00
             costo_inst=35.00
             porcentaje_dsct=0.05
+            foto="trio"
+        case 2:
+            costo_serv=99.00
+            costo_inst=30.00
+            porcentaje_dsct=0.04
+            foto="duo"
+        case 3:
+            costo_serv=89.00
+            costo_inst=15.00
+            porcentaje_dsct=0.02
+            foto="internet"
+        case 4:
+            costo_serv=59.00
+            costo_inst=12.00
+            porcentaje_dsct=0.01
+            foto="telefono"
+        case 5:
+            costo_serv=79.00
+            costo_inst=15.00
+            porcentaje_dsct=0.01
+            foto="cable"
+        default:
+            lblCostoServicio.text = "-"
+            lblCostoInstalacion.text = "-"
+            lblCostoDescuento.text = "-"
+            lblCostoTotal.text = "-"
+            foto="default"
+        }
+        if (tf_opcServicio >= 1 && tf_opcServicio <= 5 ){
             costo_dsct=(costo_serv + costo_inst)*porcentaje_dsct
             costo_total=(costo_serv + costo_inst)-costo_dsct
+            lblCostoServicio.text = String(costo_serv)
+            lblCostoInstalacion.text = String(costo_inst)
+            lblCostoDescuento.text = String(porcentaje_dsct)
             lblCostoTotal.text = String(costo_total)
-            imgServicio.image = UIImage(named: "trio")
-
-        default:
-            lblCostoTotal.text = "no"
         }
-        /*if(lblServicio = "1"){
-            costo_serv = 109.00
-            costo_inst = 35.00
-            costo_dsct = 0.05
-            lblCostoTotal = (costo_serv + costo_inst)*costo_dsct
-            
-        }else if(lblServicio = 2){
-            costo_serv = 99.00
-            costo_inst = 30.00
-            costo_dsct = 0.04
-        }else{
-            costo_serv = 89.00
-            costo_inst = 15.00
-            costo_dsct = 0.02
-            
-        }*/
+        imgServicio.image = UIImage(named: foto)
     }
 }
 
